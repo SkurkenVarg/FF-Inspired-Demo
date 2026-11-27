@@ -1,1 +1,31 @@
-
+{
+ "screen": {
+  "width": 256,
+  "height": 224
+ },
+ "tileSize": 16,
+ "startMap": "test_room",
+ "movement": {
+  "stepFrames": 16,
+  "turnDelayFrames": 6,
+  "instantTurnWhenWalking": true,
+  "fadeFrames": 12
+ },
+ "player": {
+  "color": "#4aa3ff",
+  "sprite": null,
+  "frameW": 16,
+  "frameH": 16
+ },
+ "encounters": {
+  "chancePerStep": 0.06,
+  "minSteps": 4
+ },
+ "text": {
+  "charsPerFrame": 0.6
+ },
+ "touch": {
+  "deadZone": 0.22
+ },
+ "debug": true
+}
