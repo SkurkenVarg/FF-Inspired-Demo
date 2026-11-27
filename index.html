@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>RPG Demo</title>
+<style>
+  :root { --bg: #0d0f1a; --pad: #1c2140; --edge: #3a4380; --lit: #7f8cff; --text: #cfd4ff; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+    font-family: ui-monospace, Menlo, monospace; overflow: hidden;
+    touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+  body { display: flex; flex-direction: column; align-items: center;
+    padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0); }
+  canvas { image-rendering: pixelated; image-rendering: crisp-edges; background: #000; margin-top: 8px; }
+  #controls { width: 100%; max-width: 480px; flex: 1; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; }
+  #dpad { position: relative; width: 150px; height: 150px; border-radius: 50%; background: var(--pad); border: 2px solid var(--edge); }
+  #dpad span { position: absolute; color: var(--edge); font-size: 18px; }
+  #dpad .u { top: 8px; left: 50%; transform: translateX(-50%); } #dpad .d { bottom: 8px; left: 50%; transform: translateX(-50%); }
+  #dpad .l { left: 12px; top: 50%; transform: translateY(-50%); } #dpad .r { right: 12px; top: 50%; transform: translateY(-50%); }
+  #knob { position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px 0 0 -27px; border-radius: 50%; background: var(--edge); }
+  #abtn { width: 84px; height: 84px; border-radius: 50%; background: var(--pad); border: 2px solid var(--edge);
+    display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--lit); }
+  #abtn.on { background: var(--edge); color: #fff; }
+  #error { position: fixed; left: 12px; right: 12px; top: 12px; color: #ff9a9a; font-size: 13px; line-height: 1.4; }
+  @media (orientation: landscape) {
+    body { justify-content: center; }
+    canvas { margin-top: 0; }
+    #controls { position: fixed; inset: 0; max-width: none; pointer-events: none; padding: 0 24px env(safe-area-inset-bottom, 0); }
+    #dpad, #abtn { pointer-events: auto; width: 120px; height: 120px; }
+    #abtn { width: 72px; height: 72px; }
+    #knob { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+  }
+</style>
+</head>
+<body>
+<canvas id="screen" width="256" height="224"></canvas>
+<div id="controls">
+  <div id="dpad"><span class="u">▲</span><span class="d">▼</span><span class="l">◀</span><span class="r">▶</span><div id="knob"></div></div>
+  <div id="abtn">A</div>
+</div>
+<div id="error"></div>
+<script src="game.js"></script>
+</body>
+</html>
