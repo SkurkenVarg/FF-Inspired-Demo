@@ -1,0 +1,33 @@
+{
+ "#": {
+  "name": "wall",
+  "color": "#5a4a6a",
+  "solid": true,
+  "image": null
+ },
+ ".": {
+  "name": "floor",
+  "color": "#8a8f7a",
+  "solid": false,
+  "image": null
+ },
+ "g": {
+  "name": "tall grass",
+  "color": "#3f8a3a",
+  "solid": false,
+  "encounter": true,
+  "image": null
+ },
+ "~": {
+  "name": "water",
+  "color": "#2a5fb0",
+  "solid": true,
+  "image": null
+ },
+ "D": {
+  "name": "door",
+  "color": "#b07a3a",
+  "solid": false,
+  "image": null
+ }
+}
